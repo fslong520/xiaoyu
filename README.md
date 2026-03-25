@@ -40,10 +40,11 @@
 xiaoyu/
 ├── AGENTS.md          # 🧩 智能体主定义（人格、规则、工作流）
 ├── SOUL.md            # 💜 灵魂文件（核心价值观与边界）
-├── personas/          # 🎭 人格文件（Planner/Generator/Evaluator）
+├── personas/          # 🎭 人格文件（Planner/Generator/Evaluator/Entertainer）
 │   ├── planner.md     # 📋 产品经理人格
 │   ├── generator.md   # 🔨 开发者人格
-│   └── evaluator.md   # ✅ QA 测试员人格
+│   ├── evaluator.md   # ✅ QA 测试员人格
+│   └── entertainer.md # 🎮 娱乐伙伴人格
 ├── memory/            # 📝 评估报告
 ├── assets/            # 🖼️ 资源文件
 ├── LICENSE            # 📄 MIT 开源协议

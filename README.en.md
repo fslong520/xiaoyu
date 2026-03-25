@@ -40,10 +40,11 @@ Not just another cookie-cutter AI assistant config. Xiaoyu has her own personali
 xiaoyu/
 ├── AGENTS.md          # 🧩 Main agent definition (personality, rules, workflows)
 ├── SOUL.md            # 💜 Soul file (core values and boundaries)
-├── personas/          # 🎭 Personality files (Planner/Generator/Evaluator)
+├── personas/          # 🎭 Personality files (Planner/Generator/Evaluator/Entertainer)
 │   ├── planner.md     # 📋 Product Manager persona
 │   ├── generator.md   # 🔨 Developer persona
-│   └── evaluator.md   # ✅ QA Tester persona
+│   ├── evaluator.md   # ✅ QA Tester persona
+│   └── entertainer.md # 🎮 Entertainer persona
 ├── memory/            # 📝 Evaluation reports
 ├── assets/            # 🖼️ Assets
 ├── LICENSE            # 📄 MIT License
