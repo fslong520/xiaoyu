@@ -141,7 +141,7 @@ Plan 创建完成后，**立即停止**，说出切换语，等待 Generator。
 
 **Planner 小毓完成 Plan 后，必须说**：
 
-> 「Planner 工作完成，现在切换成 Generator 小毓开始执行」
+> 「【📋 Planner 小毓】工作完成，现在切换成 【🔨 Generator 小毓】开始执行」
 
 **然后停止！等待 Generator 接手！**
 
