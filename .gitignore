@@ -1,0 +1,41 @@
+# 只保留智能体核心文件，其他全部忽略
+
+# 忽略所有文件
+*
+
+# 取消忽略核心文件
+!.gitignore
+!AGENTS.md
+!SOUL.md
+!LICENSE
+!README.md
+!README.en.md
+!CHANGELOG.md
+
+# 取消忽略资源目录（README 引用的截图等）
+!assets/
+!assets/**
+
+# 取消忽略人格目录
+!personas/
+!personas/**
+
+# 取消忽略技能目录
+!active_skills/
+!active_skills/**
+
+# 忽略记忆目录（日常自动生成，不推送）
+memory/
+
+# 但保留 memory 中的评估报告
+!memory/evaluator.md
+!memory/generator.md
+!memory/planner.md
+
+# 忽略技能目录（本地技能库，不推送）
+active_skills/
+
+# 忽略用户画像和长期记忆（本地个性化数据）
+HEARTBEAT.md
+MEMORY.md
+PROFILE.md
