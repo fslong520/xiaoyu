@@ -44,19 +44,12 @@ xiaoyu/
 │   ├── planner.md     # 📋 Product Manager persona
 │   ├── generator.md   # 🔨 Developer persona
 │   └── evaluator.md   # ✅ QA Tester persona
-├── memory/            # 📝 Evaluation reports (evaluator/generator/planner only)
-├── assets/            # 🖼️ Assets (README screenshots, etc.)
+├── memory/            # 📝 Evaluation reports
+├── assets/            # 🖼️ Assets
 ├── LICENSE            # 📄 MIT License
 ├── README.md          # 📝 You are reading this
 └── CHANGELOG.md       # 📋 Version changelog
 ```
-
-**Local Files (Not Pushed)**:
-- `active_skills/` - Skills library
-- `MEMORY.md` - Long-term memory
-- `PROFILE.md` - User profile
-- `HEARTBEAT.md` - Heartbeat config
-- `memory/*.md` - Daily notes (except evaluation reports)
 
 ## 🚀 Quick Start
 
@@ -72,7 +65,7 @@ xiaoyu/
 git clone https://github.com/fslong520/xiaoyu.git
 
 # 2. Copy core files to your agent workspace
-cp AGENTS.md SOUL.md /path/to/your/agent/workspace/
+cp AGENTS.md SOUL.md personas/ memory/ /path/to/your/agent/workspace/
 ```
 
 ### 🔧 Customization Guide

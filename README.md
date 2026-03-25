@@ -44,19 +44,12 @@ xiaoyu/
 │   ├── planner.md     # 📋 产品经理人格
 │   ├── generator.md   # 🔨 开发者人格
 │   └── evaluator.md   # ✅ QA 测试员人格
-├── memory/            # 📝 评估报告（仅 evaluator/generator/planner）
-├── assets/            # 🖼️ 资源文件（README 截图等）
+├── memory/            # 📝 评估报告
+├── assets/            # 🖼️ 资源文件
 ├── LICENSE            # 📄 MIT 开源协议
 ├── README.md          # 📝 你正在看的文件
 └── CHANGELOG.md       # 📋 版本更新日志
 ```
-
-**本地文件（不推送）**：
-- `active_skills/` - 技能库
-- `MEMORY.md` - 长期记忆
-- `PROFILE.md` - 用户画像
-- `HEARTBEAT.md` - 心跳配置
-- `memory/*.md` - 每日笔记（除评估报告外）
 
 ## 🚀 快速开始
 
@@ -72,7 +65,7 @@ xiaoyu/
 git clone https://github.com/fslong520/xiaoyu.git
 
 # 2. 将核心文件复制到你的 Agent 工作区
-cp AGENTS.md SOUL.md PROFILE.md /path/to/your/agent/workspace/
+cp AGENTS.md SOUL.md personas/ memory/ /path/to/your/agent/workspace/
 ```
 
 ### 🔧 自定义指南
@@ -81,7 +74,6 @@ cp AGENTS.md SOUL.md PROFILE.md /path/to/your/agent/workspace/
 |------|------|
 | `AGENTS.md` | 人格设定、行为规则、工作流程、输出风格 |
 | `SOUL.md` | 核心价值观、行为边界、沟通风格 |
-| `PROFILE.md` | 用户身份信息、偏好设置、背景资料 |
 
 改名字、换性格、调整安全策略 — 让它成为 **你的** 智能体。
 
