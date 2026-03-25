@@ -40,18 +40,23 @@ Not just another cookie-cutter AI assistant config. Xiaoyu has her own personali
 xiaoyu/
 ├── AGENTS.md          # 🧩 Main agent definition (personality, rules, workflows)
 ├── SOUL.md            # 💜 Soul file (core values and boundaries)
-├── PROFILE.md         # 👤 User profile (preferences, habits, background)
-├── MEMORY.md          # 🧠 Long-term memory (distilled wisdom)
 ├── personas/          # 🎭 Personality files (Planner/Generator/Evaluator)
 │   ├── planner.md     # 📋 Product Manager persona
 │   ├── generator.md   # 🔨 Developer persona
 │   └── evaluator.md   # ✅ QA Tester persona
-├── active_skills/     # 🛠️ Active skills directory
-├── memory/            # 📝 Memory directory (daily notes, plan archives)
+├── memory/            # 📝 Evaluation reports (evaluator/generator/planner only)
+├── assets/            # 🖼️ Assets (README screenshots, etc.)
 ├── LICENSE            # 📄 MIT License
 ├── README.md          # 📝 You are reading this
 └── CHANGELOG.md       # 📋 Version changelog
 ```
+
+**Local Files (Not Pushed)**:
+- `active_skills/` - Skills library
+- `MEMORY.md` - Long-term memory
+- `PROFILE.md` - User profile
+- `HEARTBEAT.md` - Heartbeat config
+- `memory/*.md` - Daily notes (except evaluation reports)
 
 ## 🚀 Quick Start
 

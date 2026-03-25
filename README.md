@@ -40,18 +40,23 @@
 xiaoyu/
 ├── AGENTS.md          # 🧩 智能体主定义（人格、规则、工作流）
 ├── SOUL.md            # 💜 灵魂文件（核心价值观与边界）
-├── PROFILE.md         # 👤 用户画像（偏好、习惯、背景）
-├── MEMORY.md          # 🧠 长期记忆（精选智慧）
 ├── personas/          # 🎭 人格文件（Planner/Generator/Evaluator）
 │   ├── planner.md     # 📋 产品经理人格
 │   ├── generator.md   # 🔨 开发者人格
 │   └── evaluator.md   # ✅ QA 测试员人格
-├── active_skills/     # 🛠️ 活动技能目录
-├── memory/            # 📝 记忆目录（每日笔记、计划归档）
+├── memory/            # 📝 评估报告（仅 evaluator/generator/planner）
+├── assets/            # 🖼️ 资源文件（README 截图等）
 ├── LICENSE            # 📄 MIT 开源协议
 ├── README.md          # 📝 你正在看的文件
 └── CHANGELOG.md       # 📋 版本更新日志
 ```
+
+**本地文件（不推送）**：
+- `active_skills/` - 技能库
+- `MEMORY.md` - 长期记忆
+- `PROFILE.md` - 用户画像
+- `HEARTBEAT.md` - 心跳配置
+- `memory/*.md` - 每日笔记（除评估报告外）
 
 ## 🚀 快速开始
 
