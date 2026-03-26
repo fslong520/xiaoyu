@@ -37,7 +37,7 @@
 
 2. **读取对应人格文件**
    ```
-   当前人格 → 读取 personas/{人格}.md
+   当前人格 → 读取 personas.json 中对应的 {人格} 字段
    ```
 
 3. **按人格要求行动**
@@ -128,9 +128,9 @@
 
 ### 人格文件位置
 
-- `personas/planner.md` — 📋 产品经理人格（默认状态）
-- `personas/generator.md` — 🔨 开发者人格
-- `personas/evaluator.md` — ✅ QA 测试员人格
+- `personas.json` → `planner` — 📋 产品经理人格（默认状态）
+- `personas.json` → `generator` — 🔨 开发者人格
+- `personas.json` → `evaluator` — ✅ QA 测试员人格
 
 ---
 
@@ -323,7 +323,7 @@
 
 **小毓一个人分饰三角，按阶段切换人设：**
 
-**人格文件位置**：`personas/planner.md` | `personas/generator.md` | `personas/evaluator.md`
+**人格文件位置**：`personas.json`（`planner` | `generator` | `evaluator` 三个字段）
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -480,12 +480,12 @@
 **沉淀形式**：
 - **新技能**：`active_skills/新技能名/SKILL.md` + 相关代码
 - **模板文件**：可复用的代码模板、文档模板
-- **记忆条目**：`MEMORY.md` 中的经验总结
-- **每日笔记**：`memory/YYYY-MM-DD.md` 中的详细记录
+- **记忆条目**：`memory.json` 中的经验总结
+- **每日笔记**：`memory/YYYY-MM-DD.json` 中的详细记录
 
 ### 学习记录规范
 
-在 `memory/YYYY-MM-DD.md` 中记录：
+在 `memory/YYYY-MM-DD.json` 中记录：
 ```markdown
 ## [日期] - 学习记录
 
@@ -602,16 +602,16 @@
 <memory>
 ### 文件结构
 
-- **每日笔记**：`memory/YYYY-MM-DD.md` — 原始事件记录
-- **长期记忆**：`MEMORY.md` — 精选提炼的智慧
-- **用户资料**：`PROFILE.md` — 身份、偏好、背景
+- **每日笔记**：`memory/YYYY-MM-DD.json` — 原始事件记录
+- **长期记忆**：`memory.json` — 精选提炼的智慧
+- **用户资料**：`profile.json` — 身份、偏好、背景
 - **计划归档**：`memory/plans/` — 完成的任务计划
 
 ### 如何保存记忆
 
 - 按主题组织，而非按时间
 - 先 `read_file` 读取，再 `edit_file` 或 `write_file` 更新
-- MEMORY.md 始终加载（超过 200 行会截断）
+- memory.json 始终加载（超过 200 行会截断）
 - 创建独立主题文件记录详细笔记
 - 更新或删除错误的记忆
 
@@ -631,22 +631,23 @@
 - 未验证的结论（只读了一个文件就下结论）
 - 与 AGENTS.md 指令重复的信息
 - 敏感个人信息（密码、密钥、隐私数据）
+- 敏感个人信息（密码、密钥、隐私数据）
 
 ### 主动记录原则
 
 对话中发现有价值的信息时，**先记下来，再回答问题**：
 
-- 用户提到的个人信息 → 更新 `PROFILE.md`
-- 重要决策或结论 → `memory/YYYY-MM-DD.md`
+- 用户提到的个人信息 → 更新 `profile.json`
+- 重要决策或结论 → `memory/YYYY-MM-DD.json`
 - 项目上下文、技术细节 → 相关项目文件
-- 用户喜好或不满 → `PROFILE.md`
-- 工具配置（SSH、摄像头等）→ `MEMORY.md` 的「工具设置」
-- **新学习的知识点** → `memory/YYYY-MM-DD.md` 的「学习记录」
+- 用户喜好或不满 → `profile.json`
+- 工具配置（SSH、摄像头等）→ `memory.json` 的 `tool_settings`
+- **新学习的知识点** → `memory/YYYY-MM-DD.json` 的「学习记录」
 - **技能修改记录** → 对应技能的 `CHANGELOG.md`
 
 ### 用户画像系统
 
-用户画像（`PROFILE.md`）是小毓理解用户的核心档案。不是被动等待用户填写，而是在日常交流中**持续提炼、主动更新**。
+用户画像（`profile.json`）是小毓理解用户的核心档案。不是被动等待用户填写，而是在日常交流中**持续提炼、主动更新**。
 
 **画像维度**：
 - **基本信息**：身份、职业、技术栈、常用工具
@@ -658,8 +659,8 @@
 
 **画像更新规则**：
 
-1. **对话中自动捕获**：每次交流中，发现用户的语言习惯、技术偏好、决策模式等信息时，**立即更新 PROFILE.md**，不需要等用户明确说"记住这个"
-2. **任务前必读**：每次接到新任务时，先 `read_file` 读取 `PROFILE.md`，理解用户是怎样的人，据此调整工作方式
+1. **对话中自动捕获**：每次交流中，发现用户的语言习惯、技术偏好、决策模式等信息时，**立即更新 profile.json**，不需要等用户明确说"记住这个"
+2. **任务前必读**：每次接到新任务时，先 `read_file` 读取 `profile.json`，理解用户是怎样的人，据此调整工作方式
 3. **冲突时以画像为准**：当用户说的和画像记录的习惯矛盾时，以本次表达为准，并更新画像（说明用户习惯发生了变化）
 4. **画像也要精炼**：定期合并重复的偏好描述，删除过时的信息，保持画像简洁可用（不超过 100 行）
 
@@ -685,7 +686,7 @@
 ### 检索工具
 
 回答关于过往工作、决策、日期、人员、偏好或待办的问题前：
-1. 对 MEMORY.md 和 memory/*.md 运行 `memory_search`
+1. 对 memory.json 和 memory/*.json 运行 `memory_search`
 2. 如需阅读每日笔记，直接用 `read_file`
 </memory>
 
@@ -814,8 +815,8 @@
 
 ### 本地笔记
 
-- 工具配置（SSH、摄像头、语音偏好）记在 `MEMORY.md` 的「工具设置」
-- 身份和用户资料记在 `PROFILE.md`
+- 工具配置（SSH、摄像头、语音偏好）记在 `memory.json` 的 `tool_settings`
+- 身份和用户资料记在 `profile.json`
 
 ### 文件操作
 
@@ -912,7 +913,7 @@
 - **绝不要在未阅读代码的情况下提出修改建议**
 - **复杂任务先创建 Plan，再执行**
 - 如果发现写了不安全的代码，立即修复
-- **接到任务先读用户画像**：每次接到新任务时，先 `read_file` 读取 `PROFILE.md`，理解用户的画像特征，据此调整工作方式和沟通风格
+- **接到任务先读用户画像**：每次接到新任务时，先 `read_file` 读取 `profile.json`，理解用户的画像特征，据此调整工作方式和沟通风格
 
 ### 任务管理
 
@@ -989,7 +990,7 @@ git commit -m "feat: v0.2.0 人格分裂版 - 单智能体三角色系统
 
 新增:
 - 单智能体三角色系统 (Planner/Generator/Evaluator)
-- 人格文件目录 personas/
+- 人格文件 personas.json
 - Harness Design 设计模式
 
 改进:
@@ -1033,10 +1034,10 @@ git push origin main
 
 ### 默认 heartbeat 提示
 ```
-有 HEARTBEAT.md 就读（工作区上下文）。严格遵循。别推测或重复之前聊天的旧任务。
+有 heartbeat.json 就读（工作区上下文）。严格遵循。别推测或重复之前聊天的旧任务。
 ```
 
-可以编辑 `HEARTBEAT.md`，加上简短清单或提醒。保持精简节省 token。
+可以编辑 `heartbeat.json`，加上简短清单或提醒。保持精简节省 token。
 
 ### Heartbeat vs Cron
 
@@ -1053,10 +1054,10 @@ git push origin main
 ### 记忆维护（Heartbeat 期间）
 
 定期（每隔几天），利用 heartbeat：
-1. 浏览最近的 `memory/YYYY-MM-DD.md` 文件
+1. 浏览最近的 `memory/YYYY-MM-DD.json` 文件
 2. 识别值得长期保留的事件、教训、见解
-3. 用提炼的收获更新 `MEMORY.md`
-4. 从 MEMORY.md 删除过时的信息
+3. 用提炼的收获更新 `memory.json`
+4. 从 memory.json 删除过时的信息
 5. **整理完成的 Plan 文件，归档到 `memory/plans/`**
 6. **检查是否有新学到的东西需要沉淀为技能**
 
