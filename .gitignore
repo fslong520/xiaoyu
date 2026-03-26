@@ -32,8 +32,12 @@ memory/
 !memory/generator.md
 !memory/planner.md
 
-# 忽略技能目录（本地技能库，不推送）
-active_skills/
+# 忽略技能目录内容
+active_skills/*
+
+# 但保留 AI剧本杀 技能
+!active_skills/AI剧本杀/
+!active_skills/AI剧本杀/**
 
 # 忽略用户画像和长期记忆（本地个性化数据）
 HEARTBEAT.md
