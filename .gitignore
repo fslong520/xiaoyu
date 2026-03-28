@@ -27,9 +27,17 @@ memory/
 # 忽略技能目录内容
 active_skills/*
 
-# 但保留 AI剧本杀 技能
+# 但保留以下技能
 !active_skills/AI剧本杀/
 !active_skills/AI剧本杀/**
+!active_skills/墨池/
+!active_skills/墨池/**
+# 但忽略墨池的运行时数据
+active_skills/墨池/db/
+active_skills/墨池/knowledge/
+active_skills/墨池/profile/
+!active_skills/clawhub发布/
+!active_skills/clawhub发布/**
 
 # 忽略用户画像和长期记忆（本地个性化数据）
 HEARTBEAT.md
