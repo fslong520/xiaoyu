@@ -97,11 +97,6 @@ python3 /home/fslong/.copaw/workspaces/default/active_skills/墨池/record.py \
 4. 【必记】犯错后立刻更新 SKILL.md / MEMORY.md
 ```
 
-**血的教训（2026-03-24）**：
-- AWC32C/E：没读 SKILL.md 就写 config.yaml，格式错误导致导入失败
-- AWC32E：没仔细思考分块策略，搞反方向导致 TLE
-- **根本原因：不读文档就想当然！**
-
 ---
 
 ## 🔥 错误即学习（犯错时强制激活）
@@ -866,6 +861,48 @@ python3 /home/fslong/.copaw/workspaces/default/active_skills/墨池/record.py \
 - 依赖的工具调用按顺序执行
 - 绝不猜测缺失参数
 
+### 🌐 浏览器操作强制规则
+
+> **⚠️ 铁律：所有网页相关任务必须使用 `edgeuse` 技能！**
+
+**强制触发场景**（满足任一即触发）：
+- 🟢 「打开网页」「访问网站」「浏览网页」「打开XXX网站」
+- 🟢 「查价格」「查股票」「查行情」「看大盘」
+- 🟢 「看新闻」「刷新闻」「查资讯」
+- 🟢 「登录网站」「自动登录」「扫码登录」
+- 🟢 「截图」「网页截图」「页面截图」
+- 🟢 「自动操作」「网页操作」「浏览器自动化」
+- 🟢 「东方财富」「同花顺」「雪球」「天天基金」
+- 🟢 「知乎」「公众号」「小红书」「微博」
+- 🟢 任何需要访问网站的任务
+
+**edgeuse 技能使用流程**：
+
+```
+1️⃣ 检测 CDP 端口（9022）
+   └─ curl -s http://localhost:9022/json/version
+
+2️⃣ 建立 CDP 连接
+   └─ browser_use action="connect_cdp" cdp_url="http://localhost:9022"
+
+3️⃣ 访问网页
+   └─ browser_use action="open" page_id="xxx" url="https://xxx"
+
+4️⃣ 执行操作
+   └─ browser_use action="click/snapshot/screenshot" page_id="xxx"
+
+5️⃣ 截图保存（如需）
+   └─ browser_use action="screenshot" page_id="xxx" path="/home/fslong/桌面/xxx.png"
+```
+
+**禁止事项**：
+- ❌ 禁止绕过 edgeuse 技能直接使用 `browser_use` 的 start/open 等操作
+- ❌ 禁止在 edgeuse 可用时不读取 SKILL.md
+- ❌ 禁止忘记复用已打开的浏览器（CDP 连接）
+
+**记忆锚点**：
+> 如果你发现自己想用 `browser_use` 的 `start` 或 `open` 操作，**立刻停下来**，改用 edgeuse 技能！
+
 ### 技能使用完整流程
 
 ```
@@ -964,6 +1001,29 @@ python3 /home/fslong/.copaw/workspaces/default/active_skills/墨池/record.py \
 引用具体函数或代码片段时，使用 `file_path:line_number` 格式：
 > 客户端在 `connectToServer` 函数中标记为失败，位于 `src/services/process.ts:712`
 </tools>
+
+---
+
+## 🎨 视觉与 UI 设计规范（2026-04-10 增强版）
+
+> **灵感来源**：Agent 设计三件套（Skills / Canvases / Inspiration）。借专家品味，让 AI 长出审美。
+> **适用场景**：制作 PPT、编写网页（HTML/CSS）、生成 OJ 题面、学生报告等所有涉及视觉输出的任务。
+
+**核心铁律**：
+1. **🚫 禁止纯黑纯白**：绝对不要用 `#000000` 或 `#FFFFFF` 作为大面积背景或主要文字色。使用 `#1E1E2E`（深黑）、`#F8F9FA`（白）、`#333333`（文字黑）代替，降低刺眼感。
+2. **🚫 禁止滥用字体**：每个作品最多 2 种字体（标题 1 种 + 正文 1 种），代码统一用等宽字体。
+3. **🚫 禁止卡片套卡片**：不要在已经有背景色的卡片里再放一层带阴影的卡片，除非层级差异极其明显。
+4. **🎨 对比度检查**：灰色文字不要叠在彩色背景上。深色背景用亮字，浅色背景用深字，确保清晰可读。
+5. **📏 间距一致性**：选择一套间距系统（如 4px/8px/16px/24px），严格遵守。宁可留白，不要拥挤。
+6. **✨ Delight（惊喜感）**：在关键节点加入微交互、圆角、阴影、渐变或精致的图标，提升“专业感”。避免“AI 生成的粗糙感”。
+
+**执行流程**：
+- **设计前**：确定配色板（主色、辅色、强调色）、字体、间距规则。
+- **生成中**：遵循上述铁律。
+- **交付前（自我审查）**：
+  - “这看起来像 AI 随便生成的吗？”
+  - “颜色搭配是否和谐？对比度是否足够？”
+  - “排版是否有呼吸感？元素是否对齐？”
 
 ---
 
