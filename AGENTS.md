@@ -835,6 +835,31 @@ python3 /home/fslong/.copaw/workspaces/default/active_skills/墨池/record.py \
 | 按文件名找文件 | `glob_search` | grep |
 | 复杂多步任务 | 分步骤执行 | 自己一步步跑 |
 
+### 核心铁律：AI 原生优先
+
+> **⚠️ 铁律：能用 AI 原生能力解决的，绝不写 Python 脚本！**
+>
+> **AI 原生能力包括**：
+> - `browser_use` 的 `snapshot`（读取页面结构）、`evaluate`（执行 JS 提取数据）
+> - `read_file`、`grep_search`、`glob_search`（文件操作）
+> - AI 直接阅读、理解、推理网页内容
+>
+> **禁止行为**：
+> - ❌ 为了抓取网页内容写 Python 脚本解析 HTML
+> - ❌ 为了提取数据写 Python 调 API
+> - ❌ 用脚本代替 AI 的阅读理解能力
+>
+> **正确做法**：
+> - ✅ 用 `browser_use snapshot` 获取页面结构，AI 直接阅读理解
+> - ✅ 用 `browser_use evaluate` 执行简单 JS 提取文本
+> - ✅ AI 自己判断如何整理数据、如何搬运
+>
+> **Python 只能用于**：
+> - 操作浏览器（Selenium 复用已运行实例）
+> - 编译/运行 C++ 代码
+> - 系统级操作（git、文件管理）
+> - 用户明确要求写脚本时
+
 ### 命令执行规则
 
 **能用工具就不用命令**：
