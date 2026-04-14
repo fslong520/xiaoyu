@@ -24,6 +24,9 @@
 # 忽略记忆目录（日常自动生成，不推送）
 memory/
 
+# 忽略记忆系统 Python 代码（2026-04-14 创建，暂不使用）
+memory_system/
+
 # 忽略技能目录内容
 active_skills/*
 
